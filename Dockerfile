@@ -4,21 +4,20 @@ FROM node:18
 # Set the working directory in the container.
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json.
-COPY package*.json ./
-COPY yarn.lock ./
+# Copy package.json and yarn.lock.
+COPY package.json yarn.lock ./
 
 # Install dependencies.
-RUN yarn
+RUN yarn install
 
 # Install PM2 globally.
-RUN yarn add -g pm2
+RUN yarn global add pm2
 
 # Copy the rest of the application code.
 COPY . .
 
 # Build the TypeScript code.
-RUN yarn run build
+RUN yarn build
 
 # Expose the port the app runs on.
 EXPOSE 3000
