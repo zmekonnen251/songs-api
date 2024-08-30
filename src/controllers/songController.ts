@@ -6,8 +6,9 @@ export const createSong = async (req: Request, res: Response) => {
     const song = new Song(req.body);
     await song.save();
     res.status(201).json(song);
-  } catch (error: any) {
-    res.status(500).json({ message: error.message });
+  } catch (error) {
+    const errorMessage = (error as Error).message || 'Failed to create song';
+    res.status(500).json({ message: errorMessage });
   }
 };
 
@@ -16,7 +17,7 @@ export const getAllSongs = async (req: Request, res: Response) => {
     const { genre, artist, album, title, page = 1, perPage = 10 } = req.query;
 
     // Constructing a filter object
-    const filter: any = {};
+    const filter: Record<string, unknown> = {};
     let artists: string[] = [];
     let albums: string[] = [];
     let genres: string[] = [];
@@ -75,8 +76,9 @@ export const getAllSongs = async (req: Request, res: Response) => {
       genres,
     };
     res.status(200).json(response);
-  } catch (error: any) {
-    res.status(500).json({ message: error?.message });
+  } catch (error) {
+    const errorMessage = (error as Error).message || 'Failed to fetch songs';
+    res.status(500).json({ message: errorMessage });
   }
 };
 
@@ -88,8 +90,9 @@ export const getSongById = async (req: Request, res: Response) => {
     } else {
       res.status(404).json({ message: 'Song not found' });
     }
-  } catch (error: any) {
-    res.status(500).json({ message: error.message });
+  } catch (error) {
+    const errorMessage = (error as Error).message || 'Failed to fetch the song';
+    res.status(500).json({ message: errorMessage });
   }
 };
 
@@ -103,8 +106,9 @@ export const updateSong = async (req: Request, res: Response) => {
     } else {
       res.status(404).json({ message: 'Song not found' });
     }
-  } catch (error: any) {
-    res.status(500).json({ message: error?.message });
+  } catch (error) {
+    const errorMessage = (error as Error).message || 'Failed to update song';
+    res.status(500).json({ message: errorMessage });
   }
 };
 
@@ -116,10 +120,8 @@ export const deleteSong = async (req: Request, res: Response) => {
     } else {
       res.status(404).json({ message: 'Song not found' });
     }
-  } catch (error: any) {
-    res.status(500).json({ message: error?.message });
+  } catch (error) {
+    const errorMessage = (error as Error).message || 'Failed to delete song';
+    res.status(500).json({ message: errorMessage });
   }
 };
-export function getAll(arg0: string, getAll: any) {
-  throw new Error('Function not implemented.');
-}

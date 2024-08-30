@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'song-api',
-      script: './dist/server.js',  // Point to the compiled JavaScript file
+      script: './dist/server.js', // Point to the compiled JavaScript file
       instances: 'max',
       exec_mode: 'cluster',
       watch: false,
