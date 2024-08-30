@@ -8,7 +8,7 @@ module.exports = {
       watch: false,
       env: {
         NODE_ENV: 'production',
-        MONGO_URI: 'mongodb://mongodb:27017/songs-db',
+        // MONGO_URI is not hardcoded here; it will be provided by Render
       },
     },
   ],
