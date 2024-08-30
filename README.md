@@ -1,26 +1,32 @@
 # Songs API
 
-A RESTful API for managing songs, including operations to create, read, update, and delete song records. This API is built with Express.js and MongoDB.
+This is the backend API for the Songs App, a music application that provides endpoints for song data and user interactions.
 
-## Features
+## Major Libraries and Frameworks
 
-- Create, Read, Update, and Delete (CRUD) operations for songs
-- Uses MongoDB as the database
-- Built with TypeScript and Node.js
-- Deployed using Docker with PM2 for process management
+- **Node.js**: JavaScript runtime for server-side development.
+- **Express.js**: Web framework for Node.js, used to build the API.
+- **Mongoose**: Object Data Modeling (ODM) library for MongoDB and Node.js.
+- **PM2**: Advanced process manager for Node.js applications.
+- **TypeScript**: TypeScript is used to enhance JavaScript with static types.
 
-## Getting Started
+## Deployment
 
-### Prerequisites
+The API is deployed using Docker on Render.
 
-- Docker
-- Node.js (for local development)
-- MongoDB (for local development)
+## Related Projects
 
-### Installation
+- **Frontend Repository**: [songs-app-frontend](https://github.com/zmekonnen251/songs-app-frontend)
 
-1. Clone the repository:
+## Setup Instructions
 
-   ```bash
-   git clone https://github.com/yourusername/songs-api.git
-   cd songs-api
+1. Clone the repository.
+2. Install dependencies using `yarn install`.
+3. Create a `.env` file based on `.env.example`.
+4. Run the application in development mode using `yarn dev`.
+5. Build the application using `yarn build`.
+6. Start the application using PM2: `yarn start`.
+
+## License
+
+This project is licensed under the ISC License.
