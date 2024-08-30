@@ -125,7 +125,7 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-Zelalem Mekonnen - [GitHub](https://github.com/zmekonnen251) - [LinkedIn](https://www.linkedin.com/in/zelalem-mekonnen-0b2b3b1b0/)
+Zelalem Mekonnen - [GitHub](https://github.com/zmekonnen251) - [LinkedIn](https://www.linkedin.com/in/zelalem-g-mekonnen)
 
 ## Support
 
